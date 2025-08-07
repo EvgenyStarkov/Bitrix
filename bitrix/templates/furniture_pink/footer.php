@@ -1,6 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 IncludeTemplateLangFile(__FILE__);
-?>
+?> lololo
 			</div>
 		</div>
 		<div id="space-for-footer"></div>
@@ -16,7 +16,7 @@ $APPLICATION->IncludeFile(
 	Array("MODE"=>"html")
 );
 ?>
-		</div>
+		</div>                            
 		<div class="footer-links">	
 <?
 $APPLICATION->IncludeComponent("bitrix:menu", "bottom", array(
