@@ -28,7 +28,7 @@ $this->setFrameMode(true);
 
 <div class="exam-review-doc">
     <p>Документы:</p>
-    <? foreach ($arResult as) ?>
+<!--    --><?// foreach ($arResult as ) ?>
 </div>
 <?php
 echo '<pre>'.print_r($arResult,true).'</pre>';

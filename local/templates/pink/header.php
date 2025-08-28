@@ -101,13 +101,18 @@ $asset = Asset::getInstance();
 );?>
         <!-- /nav -->
         <!-- breadcrumbs -->
-        <div class="breadcrumbs-box">
-            <div class="inner-wrap">
-                <a href="">Главная</a>
-                <a href="">Мебель</a>
-                <span>Выставки и события</span>
-            </div>
-        </div>
+        <?php
+        if( !\CSite::InDir('/index.php')){
+        ?>
+        <?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "nav", Array(
+            "PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+            "SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+            "START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+        ),
+            false
+        );?>
+        <?php } ?>
+
         <!-- /breadcrumbs -->
         <!-- page -->
         <div class="page">
@@ -123,3 +128,4 @@ $asset = Asset::getInstance();
                         <h1> <? $APPLICATION->ShowTitle(false) ?> </h1>
                     </header>
                     <?php } ?>
+
