@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
 <section class="hero">
     <div class="hero__header header">
         <div class="header__inner">
@@ -77,12 +78,13 @@
         </div>
     </div>
 </section>
-    <section class="fresh-hits" >
-        <div class="fresh-hits__inner">
-            <div class="fresh-hits__content">
-                <h1 class="fresh-hits__title"></h1>
-                <p class="fresh-hits__text"></p>
-            </div>
+
+<section class="fresh-hits" >
+    <div class="fresh-hits__inner">
+        <div class="fresh-hits__content">
+            <h1 class="fresh-hits__title"></h1>
+            <p class="fresh-hits__text"></p>
+        </div>
             <div class="fresh-hits__list">
                     <form action="views/films/video.php" method="post" class="fresh-hits__link">
                         <button type="submit" style="background-color: transparent; width: fit-content; height: fit-content; border: none;"

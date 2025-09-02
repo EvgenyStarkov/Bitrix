@@ -1,19 +1,19 @@
 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__logo logo">
-            <img src="/assets/icons/logo.svg" alt="" class="logo__img">
+            <img src="<?= SITE_TEMPLATE_PATH . '/assets/icons/logo.svg'?>" alt="" class="logo__img">
             <span class="logo__title">MEGAFILM </span>
         </div>
         <div class="footer__soc1als">
             <h1 class="footer__soc1als-title">Мы в соц.сетях</h1>
             <div class="footer__soc1als-links">
-                <a href="" class="footer_soc1als-link"><img src="/assets/icons/Telegram.svg"
+                <a href="" class="footer_soc1als-link"><img src="<?= SITE_TEMPLATE_PATH . '/assets/icons/Telegram.svg'?>"
                                                             alt="" class="footer__soc1als-img"></a>
-                <a href="" class="footer_soc1als-link"><img src="/assets/icons/Instagram.svg"
+                <a href="" class="footer_soc1als-link"><img src="<?=SITE_TEMPLATE_PATH . '/assets/icons/Instagram.svg'?>"
                                                             alt="" class="footer__soc1als-img"></a>
-                <a href="" class="footer_soc1als-link"><img src="/assets/icons/VK com.svg"
+                <a href="" class="footer_soc1als-link"><img src="<?=SITE_TEMPLATE_PATH . '/assets/icons/VK com.svg'?>"
                                                             alt="" class="footer__soc1als-img"></a>
-                <a href="" class="footer_soc1als-link"><img src="/assets/icons/Gmail.svg"
+                <a href="" class="footer_soc1als-link"><img src="<?=SITE_TEMPLATE_PATH . '/assets/icons/Gmail.svg'?>"
                                                             alt="" class="footer__soc1als-img"></a>
             </div>
             <p class="footer__soc1als-tel">В службу поддержки вы можете обратится по данному номеру
@@ -38,13 +38,26 @@
             ООО "Мегафильм Онлайн", ОГРН 1234567890, ИНН 1234567890<br>
             Юридический адрес: 123456, г. Москва, ул. Киношная, д. 7<br>
             <br>
-            <a href="" class="footer__main-link">Пользовательское соглашение</a> | <a href=""
-                                                                                      class="footer__main-link">Политика
-                конфидициальности</a> | <a href=""
-                                           class="footer__main-link">Реквизиты</a>
+            <?$APPLICATION->IncludeComponent("bitrix:menu", "TOPMENU", Array(
+                "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+                "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                "MAX_LEVEL" => "1",	// Уровень вложенности меню
+                "MENU_CACHE_GET_VARS" => "",	// Значимые переменные запроса
+                "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                "MENU_CACHE_TYPE" => "N",	// Тип кеширования
+                "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+                "ROOT_MENU_TYPE" => "bottom",	// Тип меню для первого уровня
+                "USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                "COMPONENT_TEMPLATE" => ".default",
+                "TYPE_MENU" => "F",
+            ),
+                false
+            );?>
         </div>
     </div>
 </footer>
+
 <div class="register">
     <form action="controllers/UserController.php" name="register" class="register__body" method="post">
         <div class="register__body-header">
@@ -111,6 +124,7 @@
         <button type="submit" class="register__submit button">Зарегестрироватся</button>
     </form>
 </div>
+
 <div class="login">
     <form action="controllers/UserController.php" name="login" class="login__body" method="post">
         <div class="login__body-header">
