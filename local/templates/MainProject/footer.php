@@ -16,28 +16,28 @@
                 <a href="" class="footer_soc1als-link"><img src="<?=SITE_TEMPLATE_PATH . '/assets/icons/Gmail.svg'?>"
                                                             alt="" class="footer__soc1als-img"></a>
             </div>
-            <p class="footer__soc1als-tel">В службу поддержки вы можете обратится по данному номеру
-                телефона <br>
-                <span class="footer__soc1als-tel-accent">+7 (999) 999-99-99</span>
-            </p>
+            <?  $APPLICATION->IncludeComponent(
+                "bitrix:main.include",
+                "",
+                Array(
+                    "AREA_FILE_SHOW" => "file",
+                    "AREA_FILE_SUFFIX" => "inc",
+                    "EDIT_TEMPLATE" => "",
+                    "PATH" => SITE_TEMPLATE_PATH . '/include/footer-number.php',
+                )
+            );?>
         </div>
         <div class="footer__main">
-            Megafilms — ваш премиальный медиацентр для всей семьи: фильмы, сериалы, спортивные
-            трансляции,
-            музыкальные клипы и ТВ-эфир.<br>
-            Эксклюзивный контент в HD/4K/HDR. Персонализированные подборки. Идеальная картинка и
-            звук на любом
-            устройстве.<br>
-            Смотрите вместе с близкими — безопасная среда и контент на все возрасты.<br>
-            <br>
-            Фильмы, сериалы, ТВ-эфир и спортивные события предоставляются только для личного
-            просмотра. Все права
-            защищены.<br>
-            <br>
-            © 2025 Megafilms<br>
-            ООО "Мегафильм Онлайн", ОГРН 1234567890, ИНН 1234567890<br>
-            Юридический адрес: 123456, г. Москва, ул. Киношная, д. 7<br>
-            <br>
+          <?  $APPLICATION->IncludeComponent(
+            "bitrix:main.include",
+            "",
+            Array(
+            "AREA_FILE_SHOW" => "file",
+            "AREA_FILE_SUFFIX" => "inc",
+            "EDIT_TEMPLATE" => "",
+            "PATH" => SITE_TEMPLATE_PATH . '/include/footer-text.php',
+            )
+            );?>
             <?$APPLICATION->IncludeComponent("bitrix:menu", "TOPMENU", Array(
                 "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
                 "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
